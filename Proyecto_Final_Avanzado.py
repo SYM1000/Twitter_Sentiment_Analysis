@@ -1,18 +1,18 @@
 def main():
+    """
+    Funcion principal, que da inicio al programa
+    """
     import twitter
     from textblob import TextBlob
     import matplotlib.pyplot as plt
     import time, sys
     from os import system, name
 
+    #tiempo = time.clock()
     api = twitter.Api(consumer_key='ivVd9RCTRNO3ciBHCmngdXpVd',
       consumer_secret='0SVJvyCb86IiIehZFAXLprRWMy6Tqv3io9l9ZqZJsnuLLXnlbH',
       access_token_key='1090865726-tjqJrWAQD9O0AqEDztNdvALzJg6kzT0DIN8hhhh',
       access_token_secret='9afD1qMx7Wg69TPNeOQvgOL12SuCwgNsjuwVnfkTEosco')
-
-    #def bienvenida():
-    #tengo que crear una funcion que le de la bienvenida al usuario, cuadno inicie
-    #el programa
 
     def clear():
         """
@@ -54,6 +54,9 @@ def main():
 
 
     def loading():
+        """
+        Esta funcion imprime un simulador de ua contador cargando
+        """
         print ("Cargando...")
         for i in range(0, 100):
             time.sleep(0.06)
@@ -94,9 +97,8 @@ def main():
 
     def traducir_tweets_espa(lista):
         """
-        Esta funcion traduce los tweets de cualquier idioma al ingles, para poder
-        ser analizados. Esta funcion regresa una lista nueva donde se agrega la
-        traduccion de cada tweet
+        Esta funcion traduce los tweets de cualquier idioma al español, para poder
+        ser mostrados al usuario
         """
         lista_traducida = []
         for n, x in enumerate(lista):
@@ -182,8 +184,12 @@ def main():
         plt.legend()
         plt.show()
 
-    #-------------------------------------------------------------------------------
+    #---------------------------------------------------------------------------
     def menu():
+        """
+        Esta funcion muestra el menu
+        """
+
         clear()
         titulo = "     TWITTER SENTIMENT ANALYSER     ".center(80, "-")
         opc_1 = "[1] - Iniciar Programa".center(80)
@@ -251,14 +257,11 @@ def main():
                     print(titulo)
                     print("\n\nTweets obtenidos:")
                     print(imprimir_lista(traducir_tweets_espa(obtener_tweets(palabra))))
-                #else:
-                    #print()
+
 
                 if grafica == "si":
                     print(titulo)
                     print(grafica_de_datos(limpiador_de_datos(analizar_sentimientos(traducir_tweets(obtener_tweets(palabra)))),promedio))
-                else:
-                    print()
 
                 regresar()
 
@@ -283,4 +286,6 @@ def main():
             clear()
             menu()
     menu()
-main()
+
+
+main() #Aqui iniciara el programa
