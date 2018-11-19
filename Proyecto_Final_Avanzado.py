@@ -8,7 +8,6 @@ def main():
     import time, sys
     from os import system, name
 
-    #tiempo = time.clock()
     api = twitter.Api(consumer_key='ivVd9RCTRNO3ciBHCmngdXpVd',
       consumer_secret='0SVJvyCb86IiIehZFAXLprRWMy6Tqv3io9l9ZqZJsnuLLXnlbH',
       access_token_key='1090865726-tjqJrWAQD9O0AqEDztNdvALzJg6kzT0DIN8hhhh',
