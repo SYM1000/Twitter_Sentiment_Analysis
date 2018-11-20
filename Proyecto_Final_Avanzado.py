@@ -123,7 +123,7 @@ def main():
         return lista_analizada
 
 
-    def limpiador_de_datos(lista_de_tuplas): #Esta funcion sigue aprueba
+    def limpiador_de_datos(lista_de_tuplas):
         """
         Esta funcion sirve para eliminar los datos que no sirvan para anlizar
         Ejemplo: sentiment(polarity = 0.0, subjectivity = 0.0)
