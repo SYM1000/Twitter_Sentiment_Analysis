@@ -3,15 +3,17 @@ def main():
     Funcion principal, que da inicio al programa
     """
     import twitter
+    import seaborn as sns
     from textblob import TextBlob
     import matplotlib.pyplot as plt
     import time, sys
     from os import system, name
+    import config
 
-    api = twitter.Api(consumer_key='ivVd9RCTRNO3ciBHCmngdXpVd',
-      consumer_secret='0SVJvyCb86IiIehZFAXLprRWMy6Tqv3io9l9ZqZJsnuLLXnlbH',
-      access_token_key='1090865726-tjqJrWAQD9O0AqEDztNdvALzJg6kzT0DIN8hhhh',
-      access_token_secret='9afD1qMx7Wg69TPNeOQvgOL12SuCwgNsjuwVnfkTEosco')
+    api = twitter.Api(consumer_key=config.consumer_key,
+      consumer_secret=config.consumer_secret,
+      access_token_key=config.access_token_key,
+      access_token_secret=config.access_token_secret)
 
     def clear():
         """
@@ -182,6 +184,15 @@ def main():
         plt.title("Análisis de Sentimientos en Twitter\n")
         plt.legend()
         plt.show()
+        plt.clf()
+        
+        plt.plot(x)
+        plt.plot(y)
+        plt.legend(['Subjetividad', 'Polaridad'])
+        plt.show()
+        plt.clf()
+
+
 
     #---------------------------------------------------------------------------
     def menu():
